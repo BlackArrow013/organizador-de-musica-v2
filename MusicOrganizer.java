@@ -82,4 +82,16 @@ public class MusicOrganizer
     {
         player.stop();
     }
+    
+    /**
+     * Se imprimirá por pantalla la lista de todos los archivos almacenados.
+     */
+    public void listAllFiles()
+    {
+        int contador = 1;
+        for(String file: files) {
+            System.out.println(contador + ". " + file);
+            contador++;
+        }
+    }
 }
