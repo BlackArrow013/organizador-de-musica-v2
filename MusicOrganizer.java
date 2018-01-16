@@ -111,6 +111,22 @@ public class MusicOrganizer
                 System.out.println("No hay archivos coincidentes con lo introducido.");
             }
         }
-
+    }
+    
+    /**
+     * Reproducirá fragmentos de todas las canciones del autor seleccionado por parámetro.
+     */
+    public void artistMusic(String artist)
+    {
+        boolean hayCoincidencia = false;
+        for(String file : files) {
+            if(file.contains(artist)) {
+                // Una coincidencia
+                player.playSample(file);
+            }
+            else if (!hayCoincidencia) {
+                System.out.println("No hay archivos coincidentes con lo introducido.");
+            }
+        }
     }
 }
