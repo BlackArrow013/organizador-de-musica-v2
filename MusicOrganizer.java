@@ -94,4 +94,17 @@ public class MusicOrganizer
             contador++;
         }
     }
+    
+    /**
+     * Busca una lista de archivos que contengan un elemento concreto en su nombre
+     */
+    public void listMatching(String searchString)
+    {
+       for(String filename : files) {
+           if(filename.contains(searchString)) {
+               // Una coincidencia
+               System.out.println(filename);
+            }
+       }
+    }
 }
