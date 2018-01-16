@@ -13,7 +13,7 @@ public class MusicOrganizer
     private ArrayList<String> files;
     // A player for the music files.
     private MusicPlayer player;
-        
+
     /**
      * Create a MusicOrganizer
      */
@@ -22,7 +22,7 @@ public class MusicOrganizer
         files = new ArrayList<String>();
         player = new MusicPlayer();
     }
-    
+
     /**
      * Add a file to the collection.
      * @param filename The file to be added.
@@ -31,7 +31,7 @@ public class MusicOrganizer
     {
         files.add(filename);
     }
-    
+
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -40,7 +40,7 @@ public class MusicOrganizer
     {
         return files.size();
     }
-    
+
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
@@ -52,7 +52,7 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
+
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
@@ -82,7 +82,7 @@ public class MusicOrganizer
     {
         player.stop();
     }
-    
+
     /**
      * Se imprimirá por pantalla la lista de todos los archivos almacenados.
      */
@@ -94,17 +94,23 @@ public class MusicOrganizer
             contador++;
         }
     }
-    
+
     /**
      * Busca una lista de archivos que contengan un elemento concreto en su nombre
      */
     public void listMatching(String searchString)
     {
-       for(String filename : files) {
-           if(filename.contains(searchString)) {
-               // Una coincidencia
-               System.out.println(filename);
+        boolean hayCoincidencia = false;
+        for(String filename : files) {
+            if(filename.contains(searchString)) {
+                // Una coincidencia
+                System.out.println(filename);
+                hayCoincidencia = true;
             }
-       }
+            else if (!hayCoincidencia) {
+                System.out.println("No hay archivos coincidentes con lo introducido.");
+            }
+        }
+
     }
 }
