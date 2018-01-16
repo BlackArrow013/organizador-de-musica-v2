@@ -96,7 +96,7 @@ public class MusicOrganizer
     }
 
     /**
-     * Busca una lista de archivos que contengan un elemento concreto en su nombre
+     * Busca una lista de archivos que contengan un elemento concreto en su nombre. Si no hay caracteres coincidentes, se imprimirá por pantalla un mensaje de error.
      */
     public void listMatching(String searchString)
     {
